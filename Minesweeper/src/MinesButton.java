@@ -9,21 +9,19 @@ import java.io.IOException;
 
 import java.awt.*;
 
-public class MinesButton extends JButton implements ActionListener, MouseListener {
+public class MinesButton extends JButton{// implements ActionListener, MouseListener {
 	ImageIcon tile, tileEmpty, bomb, flag, flagCross, bombRed, num1, num2, num3, num4, num5, num6, num7, num8;
 	String currentIcon = "";
 	String currentObject = "";
 	boolean uncoverd = false;
 	boolean flagged = false;
-	boolean recursion = false;
-	MinesweeperGUI myGUI;
+	//boolean recursion = false;
 	int posX;
 	int posY;
 
 	int button;
 
-	public MinesButton(String icon, String object, MinesweeperGUI gui, int y, int x) {
-		myGUI = gui;
+	public MinesButton(String icon, String object, int x, int y) {
 		posX = x;
 		posY = y;
 		tile = new ImageIcon("tile.png");
@@ -42,8 +40,8 @@ public class MinesButton extends JButton implements ActionListener, MouseListene
 		num8 = new ImageIcon("8eight.png");
 		currentObject = object;
 		changeIcon(icon);
-		this.addActionListener(this);
-		this.addMouseListener(this);
+		//this.addActionListener(this);
+		//this.addMouseListener(this);
 
 	}
 
@@ -93,13 +91,13 @@ public class MinesButton extends JButton implements ActionListener, MouseListene
 		}
 	}
 
-	@Override
+	/*@Override
 	public void actionPerformed(ActionEvent e) {
 		// System.out.println("action");
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MthisouseEvent e) {
 		if (e.getButton() == MouseEvent.BUTTON1) {
 			button = 1;
 		} else if (e.getButton() == MouseEvent.BUTTON3) {
@@ -166,5 +164,5 @@ public class MinesButton extends JButton implements ActionListener, MouseListene
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
-	}
+	}*/
 }
