@@ -81,17 +81,13 @@ public class MinesweeperGUI extends JFrame {
 								return;
 							}
 
-							System.out.println("Button 1");
 							if (field[x][y].currentObject.equals("tile")) { // tile
-								System.out.println("tile");
 								uncover(x, y);
 								return;
 							} else if (field[x][y].currentObject.equals("bomb")) { // bomb
-								System.out.println("bombRed");
 								field[x][y].changeIcon("bombRed");
 								field[x][y].uncoverd = true;
 							} else { // number
-								System.out.println("number");
 								field[x][y].changeIcon(field[x][y].currentObject);
 								field[x][y].uncoverd = true;
 							}

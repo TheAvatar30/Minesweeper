@@ -9,13 +9,12 @@ import java.io.IOException;
 
 import java.awt.*;
 
-public class MinesButton extends JButton{// implements ActionListener, MouseListener {
+public class MinesButton extends JButton{
 	ImageIcon tile, tileEmpty, bomb, flag, flagCross, bombRed, num1, num2, num3, num4, num5, num6, num7, num8;
 	String currentIcon = "";
 	String currentObject = "";
 	boolean uncoverd = false;
 	boolean flagged = false;
-	//boolean recursion = false;
 	int posX;
 	int posY;
 
@@ -40,8 +39,6 @@ public class MinesButton extends JButton{// implements ActionListener, MouseList
 		num8 = new ImageIcon("pics/8eight.png");
 		currentObject = object;
 		changeIcon(icon);
-		//this.addActionListener(this);
-		//this.addMouseListener(this);
 
 	}
 
@@ -90,79 +87,4 @@ public class MinesButton extends JButton{// implements ActionListener, MouseList
 			currentIcon = icon;
 		}
 	}
-
-	/*@Override
-	public void actionPerformed(ActionEvent e) {
-		// System.out.println("action");
-	}
-
-	@Override
-	public void mouseClicked(MthisouseEvent e) {
-		if (e.getButton() == MouseEvent.BUTTON1) {
-			button = 1;
-		} else if (e.getButton() == MouseEvent.BUTTON3) {
-			button = 3;
-		}
-
-		if (!uncoverd) {
-			if (button == 1) {
-				if (flagged) {
-					return;
-				}
-				if (currentObject.equals("bomb")) { // bombe gefunden
-					this.changeIcon("bombRed");
-					uncoverd = true;
-				} else if (currentObject.equals("tile")) { // leer gefunden
-					uncoverd = true;
-					this.changeIcon("tileEmpty");
-					myGUI.uncover(posX,posY);
-					System.out.println(posX+" "+posY);
-					recursion = true;
-				} else {
-
-					for (int i = 0; i < 9; i++) {
-						if (currentObject.equals("num" + i)) {
-							this.changeIcon("num" + i);
-							uncoverd = true;
-							break;
-						}
-					}
-				}
-
-			} else if (button == 3) {
-				if (flagged) {
-					flagged = false;
-					this.changeIcon("tile");
-				} else if (!flagged && !uncoverd) {
-					flagged = true;
-					this.changeIcon("flag");
-				}
-			}
-		}
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}*/
 }
